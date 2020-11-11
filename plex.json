@@ -137,7 +137,7 @@
         "#508642",
         "#d44a3a"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "description": "Streaming Brain Estimate",
       "fieldConfig": {
         "defaults": {
@@ -245,7 +245,7 @@
         "#508642",
         "#d44a3a"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "description": "Streaming Brain Estimate",
       "fieldConfig": {
         "defaults": {
@@ -353,7 +353,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(212, 74, 58, 0.58)"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "description": "",
       "fieldConfig": {
         "defaults": {
@@ -468,7 +468,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#299c46"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -582,7 +582,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#299c46"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -696,7 +696,7 @@
         "#967302",
         "#d44a3a"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -813,7 +813,7 @@
         "#584477",
         "#d44a3a"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -930,7 +930,7 @@
         "#584477",
         "#d44a3a"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -1047,7 +1047,7 @@
         "#584477",
         "#d44a3a"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -1164,7 +1164,7 @@
         "#584477",
         "#d44a3a"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -1281,7 +1281,7 @@
         "rgb(8, 125, 161)",
         "#d44a3a"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -1388,7 +1388,7 @@
         "rgb(8, 125, 161)",
         "#d44a3a"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -1495,7 +1495,7 @@
         "rgb(8, 125, 161)",
         "#d44a3a"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -1602,7 +1602,7 @@
         "rgb(8, 125, 161)",
         "#d44a3a"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -1709,7 +1709,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(212, 74, 58, 0.58)"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -1823,7 +1823,7 @@
         "rgba(237, 129, 40, 0.89)",
         "#299c46"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -1937,7 +1937,7 @@
         "rgba(237, 129, 40, 0.89)",
         "rgba(212, 74, 58, 0.58)"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -2051,7 +2051,7 @@
         "#967302",
         "#d44a3a"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -2168,7 +2168,7 @@
         "#584477",
         "#d44a3a"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -2285,7 +2285,7 @@
         "#584477",
         "#d44a3a"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -2402,7 +2402,7 @@
         "#584477",
         "#d44a3a"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -2519,7 +2519,7 @@
         "#584477",
         "#d44a3a"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -2648,7 +2648,7 @@
         "label": "Others",
         "threshold": ".04"
       },
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "decimals": 0,
       "fieldConfig": {
         "defaults": {
@@ -2762,7 +2762,7 @@
         "label": "Others",
         "threshold": "0"
       },
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "decimals": 0,
       "fieldConfig": {
         "defaults": {
@@ -2870,7 +2870,7 @@
     },
     {
       "columns": [],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -3068,7 +3068,7 @@
         "#ef843c",
         "#890f02"
       ],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "decimals": 0,
       "esGeoPoint": "geohash",
       "esLocationName": "location",
@@ -3189,7 +3189,7 @@
     },
     {
       "columns": [],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -3387,7 +3387,7 @@
         "mode": "spectrum"
       },
       "dataFormat": "tsbuckets",
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -3506,7 +3506,7 @@
     },
     {
       "columns": [],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -3690,7 +3690,7 @@
     },
     {
       "columns": [],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -4022,7 +4022,7 @@
     },
     {
       "columns": [],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -4193,7 +4193,7 @@
     },
     {
       "columns": [],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -4349,7 +4349,7 @@
     },
     {
       "columns": [],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
@@ -4610,7 +4610,7 @@
     },
     {
       "columns": [],
-      "datasource": "influxdb-pfsense",
+      "datasource": "influxdb-varken",
       "fieldConfig": {
         "defaults": {
           "custom": {}
