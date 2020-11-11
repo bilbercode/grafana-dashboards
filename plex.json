@@ -16,8 +16,8 @@
   "editable": true,
   "gnetId": 9585,
   "graphTooltip": 0,
-  "id": 5,
-  "iteration": 1605132301887,
+  "id": 7,
+  "iteration": 1605134125537,
   "links": [],
   "panels": [
     {
@@ -784,8 +784,8 @@
             {
               "condition": "AND",
               "key": "section_name",
-              "operator": "=~",
-              "value": "/^$movieslibrary$/"
+              "operator": "=",
+              "value": "Films"
             }
           ]
         }
@@ -901,8 +901,8 @@
             {
               "condition": "AND",
               "key": "section_name",
-              "operator": "=~",
-              "value": "/^$movieslibrary$/"
+              "operator": "=",
+              "value": "Films"
             }
           ]
         }
@@ -1018,8 +1018,8 @@
             {
               "condition": "AND",
               "key": "section_name",
-              "operator": "=~",
-              "value": "/^$tvlibrary$/"
+              "operator": "=",
+              "value": "TV programmes"
             }
           ]
         }
@@ -1066,123 +1066,6 @@
         "h": 2,
         "w": 2,
         "x": 20,
-        "y": 0
-      },
-      "hideTimeOverride": true,
-      "id": 14,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "groupBy": [],
-          "measurement": "Tautulli",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "seasons"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "type",
-              "operator": "=",
-              "value": "library_stats"
-            },
-            {
-              "condition": "AND",
-              "key": "section_name",
-              "operator": "=~",
-              "value": "/^$tvlibrary$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": "",
-      "timeFrom": "3630s",
-      "title": "TV Seasons",
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "current"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "#584477",
-        "#d44a3a"
-      ],
-      "datasource": "influxdb-varken",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 2,
-        "x": 22,
         "y": 0
       },
       "hideTimeOverride": true,
@@ -1252,8 +1135,8 @@
             {
               "condition": "AND",
               "key": "section_name",
-              "operator": "=~",
-              "value": "/^$tvlibrary$/"
+              "operator": "=",
+              "value": "TV programmes"
             }
           ]
         }
@@ -2043,441 +1926,110 @@
       "valueName": "current"
     },
     {
-      "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
+      "circleMaxSize": "2",
+      "circleMinSize": "2",
       "colors": [
-        "#299c46",
-        "#967302",
-        "#d44a3a"
+        "#24c3ff",
+        "#ef843c",
+        "#890f02"
       ],
       "datasource": "influxdb-varken",
+      "decimals": 0,
+      "esGeoPoint": "geohash",
+      "esLocationName": "location",
+      "esMetric": "metric",
       "fieldConfig": {
         "defaults": {
           "custom": {}
         },
         "overrides": []
       },
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
       "gridPos": {
-        "h": 2,
-        "w": 2,
-        "x": 14,
+        "h": 10,
+        "w": 8,
+        "x": 16,
         "y": 2
       },
+      "hideEmpty": false,
       "hideTimeOverride": true,
-      "id": 35,
-      "interval": null,
+      "hideZero": false,
+      "id": 11,
+      "initialZoom": "4",
+      "interval": "",
       "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
+      "locationData": "table",
+      "mapCenter": "custom",
+      "mapCenterLatitude": "37.9",
+      "mapCenterLongitude": "-94.9",
+      "maxDataPoints": 1,
+      "maxPerRow": 3,
+      "mouseWheelZoom": false,
+      "showLegend": false,
+      "stickyLabels": false,
+      "tableQueryOptions": {
+        "geohashField": "geohash",
+        "labelField": "full_location",
+        "latitudeField": "latitude",
+        "longitudeField": "longitude",
+        "metricField": "metric",
+        "queryType": "coordinates"
       },
-      "tableColumn": "",
       "targets": [
         {
-          "groupBy": [],
+          "alias": "$tag_region_code",
+          "dsType": "influxdb",
+          "groupBy": [
+            {
+              "params": [
+                "latitude"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "longitude"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "full_location"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "name"
+              ],
+              "type": "tag"
+            }
+          ],
           "measurement": "Tautulli",
           "orderByTime": "ASC",
           "policy": "default",
           "refId": "A",
-          "resultFormat": "time_series",
+          "resultFormat": "table",
           "select": [
             [
               {
                 "params": [
-                  "episodes"
+                  "hash"
                 ],
                 "type": "field"
               },
               {
                 "params": [],
                 "type": "distinct"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "type",
-              "operator": "=",
-              "value": "library_stats"
-            },
-            {
-              "condition": "AND",
-              "key": "section_name",
-              "operator": "=~",
-              "value": "/^$tvlibrary$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": "",
-      "timeFrom": "24h",
-      "title": "Recently Added TV",
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "diff"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "#584477",
-        "#d44a3a"
-      ],
-      "datasource": "influxdb-varken",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 2,
-        "x": 16,
-        "y": 2
-      },
-      "hideTimeOverride": true,
-      "id": 18,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "groupBy": [],
-          "measurement": "Tautulli",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "total"
-                ],
-                "type": "field"
               },
               {
                 "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "type",
-              "operator": "=",
-              "value": "library_stats"
-            },
-            {
-              "condition": "AND",
-              "key": "section_name",
-              "operator": "=~",
-              "value": "/^$movies4klibrary$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": "",
-      "timeFrom": "3630s",
-      "title": "4K Movies",
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "current"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "#584477",
-        "#d44a3a"
-      ],
-      "datasource": "influxdb-varken",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 2,
-        "x": 18,
-        "y": 2
-      },
-      "hideTimeOverride": true,
-      "id": 36,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "groupBy": [],
-          "measurement": "Tautulli",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "total"
-                ],
-                "type": "field"
+                "type": "count"
               },
               {
-                "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "type",
-              "operator": "=",
-              "value": "library_stats"
-            },
-            {
-              "condition": "AND",
-              "key": "section_name",
-              "operator": "=~",
-              "value": "/^$tv4klibrary$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": "",
-      "timeFrom": "3630s",
-      "title": "4K TV Shows",
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "current"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "#584477",
-        "#d44a3a"
-      ],
-      "datasource": "influxdb-varken",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 2,
-        "x": 20,
-        "y": 2
-      },
-      "hideTimeOverride": true,
-      "id": 15,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "groupBy": [],
-          "measurement": "Tautulli",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
                 "params": [
-                  "seasons"
+                  "metric"
                 ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
+                "type": "alias"
               }
             ]
           ],
@@ -2485,146 +2037,19 @@
             {
               "key": "type",
               "operator": "=",
-              "value": "library_stats"
-            },
-            {
-              "condition": "AND",
-              "key": "section_name",
-              "operator": "=~",
-              "value": "/^$tv4klibrary$/"
+              "value": "Session"
             }
           ]
         }
       ],
-      "thresholds": "",
-      "timeFrom": "3630s",
-      "title": "4K TV Seasons",
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
-      "valueName": "current"
-    },
-    {
-      "cacheTimeout": null,
-      "colorBackground": true,
-      "colorValue": false,
-      "colors": [
-        "#299c46",
-        "#584477",
-        "#d44a3a"
-      ],
-      "datasource": "influxdb-varken",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "format": "none",
-      "gauge": {
-        "maxValue": 100,
-        "minValue": 0,
-        "show": false,
-        "thresholdLabels": false,
-        "thresholdMarkers": true
-      },
-      "gridPos": {
-        "h": 2,
-        "w": 2,
-        "x": 22,
-        "y": 2
-      },
-      "hideTimeOverride": true,
-      "id": 16,
-      "interval": null,
-      "links": [],
-      "mappingType": 1,
-      "mappingTypes": [
-        {
-          "name": "value to text",
-          "value": 1
-        },
-        {
-          "name": "range to text",
-          "value": 2
-        }
-      ],
-      "maxDataPoints": 100,
-      "nullPointMode": "connected",
-      "nullText": null,
-      "postfix": "",
-      "postfixFontSize": "50%",
-      "prefix": "",
-      "prefixFontSize": "50%",
-      "rangeMaps": [
-        {
-          "from": "null",
-          "text": "N/A",
-          "to": "null"
-        }
-      ],
-      "sparkline": {
-        "fillColor": "rgba(31, 118, 189, 0.18)",
-        "full": false,
-        "lineColor": "rgb(31, 120, 193)",
-        "show": false
-      },
-      "tableColumn": "",
-      "targets": [
-        {
-          "groupBy": [],
-          "measurement": "Tautulli",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "episodes"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "last"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "type",
-              "operator": "=",
-              "value": "library_stats"
-            },
-            {
-              "condition": "AND",
-              "key": "section_name",
-              "operator": "=~",
-              "value": "/^$tv4klibrary$/"
-            }
-          ]
-        }
-      ],
-      "thresholds": "",
-      "timeFrom": "3630s",
-      "title": "4K TV Episodes",
-      "type": "singlestat",
-      "valueFontSize": "80%",
-      "valueMaps": [
-        {
-          "op": "=",
-          "text": "N/A",
-          "value": "null"
-        }
-      ],
+      "thresholds": "2,3",
+      "timeFrom": "33s",
+      "timeShift": null,
+      "title": "",
+      "type": "grafana-worldmap-panel",
+      "unitPlural": "Streams",
+      "unitSingle": "",
+      "unitSingular": "Stream",
       "valueName": "current"
     },
     {
@@ -3061,133 +2486,6 @@
       "type": "table-old"
     },
     {
-      "circleMaxSize": "2",
-      "circleMinSize": "2",
-      "colors": [
-        "#24c3ff",
-        "#ef843c",
-        "#890f02"
-      ],
-      "datasource": "influxdb-varken",
-      "decimals": 0,
-      "esGeoPoint": "geohash",
-      "esLocationName": "location",
-      "esMetric": "metric",
-      "fieldConfig": {
-        "defaults": {
-          "custom": {}
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 10,
-        "w": 8,
-        "x": 16,
-        "y": 4
-      },
-      "hideEmpty": false,
-      "hideTimeOverride": true,
-      "hideZero": false,
-      "id": 11,
-      "initialZoom": "4",
-      "interval": "",
-      "links": [],
-      "locationData": "table",
-      "mapCenter": "custom",
-      "mapCenterLatitude": "37.9",
-      "mapCenterLongitude": "-94.9",
-      "maxDataPoints": 1,
-      "maxPerRow": 3,
-      "mouseWheelZoom": false,
-      "showLegend": false,
-      "stickyLabels": false,
-      "tableQueryOptions": {
-        "geohashField": "geohash",
-        "labelField": "full_location",
-        "latitudeField": "latitude",
-        "longitudeField": "longitude",
-        "metricField": "metric",
-        "queryType": "coordinates"
-      },
-      "targets": [
-        {
-          "alias": "$tag_region_code",
-          "dsType": "influxdb",
-          "groupBy": [
-            {
-              "params": [
-                "latitude"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "longitude"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "full_location"
-              ],
-              "type": "tag"
-            },
-            {
-              "params": [
-                "name"
-              ],
-              "type": "tag"
-            }
-          ],
-          "measurement": "Tautulli",
-          "orderByTime": "ASC",
-          "policy": "default",
-          "refId": "A",
-          "resultFormat": "table",
-          "select": [
-            [
-              {
-                "params": [
-                  "hash"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "distinct"
-              },
-              {
-                "params": [],
-                "type": "count"
-              },
-              {
-                "params": [
-                  "metric"
-                ],
-                "type": "alias"
-              }
-            ]
-          ],
-          "tags": [
-            {
-              "key": "type",
-              "operator": "=",
-              "value": "Session"
-            }
-          ]
-        }
-      ],
-      "thresholds": "2,3",
-      "timeFrom": "33s",
-      "timeShift": null,
-      "title": "",
-      "type": "grafana-worldmap-panel",
-      "unitPlural": "Streams",
-      "unitSingle": "",
-      "unitSingular": "Stream",
-      "valueName": "current"
-    },
-    {
       "columns": [],
       "datasource": "influxdb-varken",
       "fieldConfig": {
@@ -3518,7 +2816,7 @@
         "h": 5,
         "w": 8,
         "x": 16,
-        "y": 14
+        "y": 12
       },
       "hideTimeOverride": true,
       "id": 30,
@@ -4034,7 +3332,7 @@
         "h": 4,
         "w": 8,
         "x": 16,
-        "y": 19
+        "y": 17
       },
       "hideTimeOverride": true,
       "id": 39,
@@ -4205,7 +3503,7 @@
         "h": 5,
         "w": 8,
         "x": 16,
-        "y": 23
+        "y": 21
       },
       "hideTimeOverride": true,
       "id": 40,
@@ -4622,7 +3920,7 @@
         "h": 5,
         "w": 8,
         "x": 16,
-        "y": 28
+        "y": 26
       },
       "hideTimeOverride": true,
       "id": 41,
@@ -4817,25 +4115,6 @@
       },
       {
         "current": {
-          "text": "Movies 4K",
-          "value": "Movies 4K"
-        },
-        "error": null,
-        "hide": 2,
-        "label": "4K Movies Library Name",
-        "name": "movies4klibrary",
-        "options": [
-          {
-            "text": "Movies 4K",
-            "value": "Movies 4K"
-          }
-        ],
-        "query": "Movies 4K",
-        "skipUrlSync": false,
-        "type": "constant"
-      },
-      {
-        "current": {
           "text": "TV Shows",
           "value": "TV Shows"
         },
@@ -4850,25 +4129,6 @@
           }
         ],
         "query": "TV Shows",
-        "skipUrlSync": false,
-        "type": "constant"
-      },
-      {
-        "current": {
-          "text": "TV Shows 4K",
-          "value": "TV Shows 4K"
-        },
-        "error": null,
-        "hide": 2,
-        "label": "TV 4K Library Name",
-        "name": "tv4klibrary",
-        "options": [
-          {
-            "text": "TV Shows 4K",
-            "value": "TV Shows 4K"
-          }
-        ],
-        "query": "TV Shows 4K",
         "skipUrlSync": false,
         "type": "constant"
       },
@@ -5001,5 +4261,5 @@
   "timezone": "browser",
   "title": "Plex",
   "uid": "iTbnha5mkasdf",
-  "version": 3
+  "version": 1
 }
