@@ -16,8 +16,8 @@
   "editable": true,
   "gnetId": 12023,
   "graphTooltip": 0,
-  "id": 18,
-  "iteration": 1605373972442,
+  "id": 23,
+  "iteration": 1605384835357,
   "links": [],
   "panels": [
     {
@@ -1301,18 +1301,18 @@
       },
       "targets": [
         {
-          "expr": "sum(pfsense_blocked_total) by (city, longitude, latitude)",
+          "expr": "sum(rate(pfsense_blocked_total[1m])) by (latitude, longitude, city)",
           "format": "table",
           "instant": true,
           "interval": "",
-          "legendFormat": "",
+          "legendFormat": "{{city}}",
           "refId": "A"
         }
       ],
       "thresholds": "10,15, 30",
       "timeFrom": null,
       "timeShift": null,
-      "title": "Blocked by country",
+      "title": "BPM by country",
       "type": "grafana-worldmap-panel",
       "unitPlural": "",
       "unitSingle": "",
@@ -1334,10 +1334,6 @@
               {
                 "color": "red",
                 "value": null
-              },
-              {
-                "color": "red",
-                "value": 80
               }
             ]
           }
@@ -1366,7 +1362,7 @@
       "pluginVersion": "7.3.1",
       "targets": [
         {
-          "expr": "count(pfsense_blocked_total) by (protocol)",
+          "expr": "sum(rate(pfsense_blocked_total[1m])) by (protocol)",
           "format": "time_series",
           "instant": false,
           "interval": "",
@@ -1376,7 +1372,7 @@
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "Blocked by protocol",
+      "title": "BPM by protocol",
       "type": "bargauge"
     },
     {
@@ -2871,7 +2867,7 @@
         "y": 38
       },
       "hiddenSeries": false,
-      "id": 195,
+      "id": 215,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -2895,7 +2891,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -3113,7 +3109,7 @@
         "y": 38
       },
       "hiddenSeries": false,
-      "id": 204,
+      "id": 224,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -3140,7 +3136,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -3476,7 +3472,7 @@
         "y": 45
       },
       "hiddenSeries": false,
-      "id": 196,
+      "id": 216,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -3500,7 +3496,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -3718,7 +3714,7 @@
         "y": 45
       },
       "hiddenSeries": false,
-      "id": 205,
+      "id": 225,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -3745,7 +3741,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -4081,7 +4077,7 @@
         "y": 52
       },
       "hiddenSeries": false,
-      "id": 197,
+      "id": 217,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -4105,7 +4101,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -4323,7 +4319,7 @@
         "y": 52
       },
       "hiddenSeries": false,
-      "id": 206,
+      "id": 226,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -4350,7 +4346,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -4686,7 +4682,7 @@
         "y": 59
       },
       "hiddenSeries": false,
-      "id": 198,
+      "id": 218,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -4710,7 +4706,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -4928,7 +4924,7 @@
         "y": 59
       },
       "hiddenSeries": false,
-      "id": 207,
+      "id": 227,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -4955,7 +4951,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -5291,7 +5287,7 @@
         "y": 66
       },
       "hiddenSeries": false,
-      "id": 199,
+      "id": 219,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -5315,7 +5311,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -5533,7 +5529,7 @@
         "y": 66
       },
       "hiddenSeries": false,
-      "id": 208,
+      "id": 228,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -5560,7 +5556,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -5896,7 +5892,7 @@
         "y": 73
       },
       "hiddenSeries": false,
-      "id": 200,
+      "id": 220,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -5920,7 +5916,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -6138,7 +6134,7 @@
         "y": 73
       },
       "hiddenSeries": false,
-      "id": 209,
+      "id": 229,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -6165,7 +6161,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -6501,7 +6497,7 @@
         "y": 80
       },
       "hiddenSeries": false,
-      "id": 201,
+      "id": 221,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -6525,7 +6521,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -6743,7 +6739,7 @@
         "y": 80
       },
       "hiddenSeries": false,
-      "id": 210,
+      "id": 230,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -6770,7 +6766,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -7106,7 +7102,7 @@
         "y": 87
       },
       "hiddenSeries": false,
-      "id": 202,
+      "id": 222,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -7130,7 +7126,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -7348,7 +7344,7 @@
         "y": 87
       },
       "hiddenSeries": false,
-      "id": 211,
+      "id": 231,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -7375,7 +7371,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -7711,7 +7707,7 @@
         "y": 94
       },
       "hiddenSeries": false,
-      "id": 203,
+      "id": 223,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -7735,7 +7731,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -7953,7 +7949,7 @@
         "y": 94
       },
       "hiddenSeries": false,
-      "id": 212,
+      "id": 232,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -7980,7 +7976,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605373972442,
+      "repeatIteration": 1605384835357,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
