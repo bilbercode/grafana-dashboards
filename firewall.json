@@ -16,7 +16,7 @@
   "editable": true,
   "gnetId": 12023,
   "graphTooltip": 0,
-  "iteration": 1605434495337,
+  "iteration": 1605434972727,
   "links": [],
   "panels": [
     {
@@ -1241,17 +1241,98 @@
     },
     {
       "collapsed": false,
-      "datasource": "influxdb-pfsense",
+      "datasource": null,
       "gridPos": {
         "h": 1,
         "w": 24,
         "x": 0,
         "y": 13
       },
-      "id": 41,
+      "id": 234,
       "panels": [],
-      "title": "Systems",
+      "title": "Firewall",
       "type": "row"
+    },
+    {
+      "datasource": "influxdb-pfsense",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {
+            "align": null,
+            "filterable": false
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "red",
+                "value": null
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 14
+      },
+      "id": 214,
+      "options": {
+        "displayMode": "lcd",
+        "orientation": "horizontal",
+        "reduceOptions": {
+          "calcs": [
+            "lastNotNull"
+          ],
+          "fields": "",
+          "values": false
+        },
+        "showUnfilled": true
+      },
+      "pluginVersion": "7.3.1",
+      "targets": [
+        {
+          "alias": "$tag_protocol",
+          "groupBy": [
+            {
+              "params": [
+                "protocol"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "firewall.blocked_total",
+          "orderByTime": "ASC",
+          "policy": "autogen",
+          "query": "SELECT count(\"value\") FROM \"autogen\".\"firewall.blocked_total\" WHERE $timeFilter GROUP BY \"protocol\"",
+          "rawQuery": false,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
+              }
+            ]
+          ],
+          "tags": []
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Blocked by protocol",
+      "type": "bargauge"
     },
     {
       "circleMaxSize": "10",
@@ -1273,10 +1354,10 @@
         "overrides": []
       },
       "gridPos": {
-        "h": 8,
-        "w": 7,
+        "h": 13,
+        "w": 12,
         "x": 0,
-        "y": 14
+        "y": 18
       },
       "hideEmpty": false,
       "hideZero": false,
@@ -1341,7 +1422,7 @@
       "thresholds": "10,15, 30",
       "timeFrom": null,
       "timeShift": null,
-      "title": "BPM by country",
+      "title": "Blocked by country",
       "type": "grafana-worldmap-panel",
       "unitPlural": "",
       "unitSingle": "",
@@ -1349,85 +1430,52 @@
       "valueName": "total"
     },
     {
-      "datasource": "influxdb-pfsense",
+      "datasource": "Loki",
       "fieldConfig": {
         "defaults": {
-          "custom": {
-            "align": null,
-            "filterable": false
-          },
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "red",
-                "value": null
-              }
-            ]
-          }
+          "custom": {}
         },
         "overrides": []
       },
       "gridPos": {
-        "h": 4,
-        "w": 3,
-        "x": 7,
-        "y": 14
+        "h": 13,
+        "w": 12,
+        "x": 12,
+        "y": 18
       },
-      "id": 214,
+      "id": 254,
       "options": {
-        "displayMode": "lcd",
-        "orientation": "horizontal",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "showUnfilled": true
+        "showLabels": false,
+        "showTime": true,
+        "sortOrder": "Descending",
+        "wrapLogMessage": true
       },
       "pluginVersion": "7.3.1",
       "targets": [
         {
-          "alias": "$tag_protocol",
-          "groupBy": [
-            {
-              "params": [
-                "protocol"
-              ],
-              "type": "tag"
-            }
-          ],
-          "measurement": "firewall.blocked_total",
-          "orderByTime": "ASC",
-          "policy": "autogen",
-          "query": "SELECT count(\"value\") FROM \"autogen\".\"firewall.blocked_total\" WHERE $timeFilter GROUP BY \"protocol\"",
-          "rawQuery": false,
-          "refId": "A",
-          "resultFormat": "time_series",
-          "select": [
-            [
-              {
-                "params": [
-                  "value"
-                ],
-                "type": "field"
-              },
-              {
-                "params": [],
-                "type": "count"
-              }
-            ]
-          ],
-          "tags": []
+          "expr": "{action=\"block\"}",
+          "legendFormat": "",
+          "refId": "A"
         }
       ],
       "timeFrom": null,
       "timeShift": null,
-      "title": "BPM by protocol",
-      "type": "bargauge"
+      "title": "Logs",
+      "type": "logs"
+    },
+    {
+      "collapsed": false,
+      "datasource": "influxdb-pfsense",
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 31
+      },
+      "id": 41,
+      "panels": [],
+      "title": "Systems",
+      "type": "row"
     },
     {
       "aliasColors": {},
@@ -1447,9 +1495,9 @@
       "fillGradient": 0,
       "gridPos": {
         "h": 8,
-        "w": 5,
-        "x": 10,
-        "y": 14
+        "w": 12,
+        "x": 0,
+        "y": 32
       },
       "hiddenSeries": false,
       "id": 4,
@@ -1594,9 +1642,9 @@
       "fontSize": "100%",
       "gridPos": {
         "h": 8,
-        "w": 9,
-        "x": 15,
-        "y": 14
+        "w": 12,
+        "x": 12,
+        "y": 32
       },
       "id": 194,
       "links": [],
@@ -1776,7 +1824,7 @@
         "h": 8,
         "w": 12,
         "x": 0,
-        "y": 22
+        "y": 40
       },
       "hiddenSeries": false,
       "id": 2,
@@ -1990,7 +2038,7 @@
         "h": 8,
         "w": 12,
         "x": 12,
-        "y": 22
+        "y": 40
       },
       "hiddenSeries": false,
       "id": 37,
@@ -2289,7 +2337,7 @@
         "h": 1,
         "w": 24,
         "x": 0,
-        "y": 30
+        "y": 48
       },
       "id": 43,
       "panels": [],
@@ -2315,7 +2363,7 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 31
+        "y": 49
       },
       "hiddenSeries": false,
       "id": 38,
@@ -2556,7 +2604,7 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 31
+        "y": 49
       },
       "hiddenSeries": false,
       "id": 39,
@@ -2918,10 +2966,10 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 38
+        "y": 56
       },
       "hiddenSeries": false,
-      "id": 215,
+      "id": 235,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -2945,7 +2993,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -3160,10 +3208,10 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 38
+        "y": 56
       },
       "hiddenSeries": false,
-      "id": 224,
+      "id": 244,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -3190,7 +3238,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -3523,10 +3571,10 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 45
+        "y": 63
       },
       "hiddenSeries": false,
-      "id": 216,
+      "id": 236,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -3550,7 +3598,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -3765,10 +3813,10 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 45
+        "y": 63
       },
       "hiddenSeries": false,
-      "id": 225,
+      "id": 245,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -3795,7 +3843,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -4128,10 +4176,10 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 52
+        "y": 70
       },
       "hiddenSeries": false,
-      "id": 217,
+      "id": 237,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -4155,7 +4203,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -4370,10 +4418,10 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 52
+        "y": 70
       },
       "hiddenSeries": false,
-      "id": 226,
+      "id": 246,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -4400,7 +4448,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -4733,10 +4781,10 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 59
+        "y": 77
       },
       "hiddenSeries": false,
-      "id": 218,
+      "id": 238,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -4760,7 +4808,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -4975,10 +5023,10 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 59
+        "y": 77
       },
       "hiddenSeries": false,
-      "id": 227,
+      "id": 247,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -5005,7 +5053,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -5338,10 +5386,10 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 66
+        "y": 84
       },
       "hiddenSeries": false,
-      "id": 219,
+      "id": 239,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -5365,7 +5413,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -5580,10 +5628,10 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 66
+        "y": 84
       },
       "hiddenSeries": false,
-      "id": 228,
+      "id": 248,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -5610,7 +5658,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -5943,10 +5991,10 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 73
+        "y": 91
       },
       "hiddenSeries": false,
-      "id": 220,
+      "id": 240,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -5970,7 +6018,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -6185,10 +6233,10 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 73
+        "y": 91
       },
       "hiddenSeries": false,
-      "id": 229,
+      "id": 249,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -6215,7 +6263,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -6548,10 +6596,10 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 80
+        "y": 98
       },
       "hiddenSeries": false,
-      "id": 221,
+      "id": 241,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -6575,7 +6623,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -6790,10 +6838,10 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 80
+        "y": 98
       },
       "hiddenSeries": false,
-      "id": 230,
+      "id": 250,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -6820,7 +6868,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -7153,10 +7201,10 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 87
+        "y": 105
       },
       "hiddenSeries": false,
-      "id": 222,
+      "id": 242,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -7180,7 +7228,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -7395,10 +7443,10 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 87
+        "y": 105
       },
       "hiddenSeries": false,
-      "id": 231,
+      "id": 251,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -7425,7 +7473,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -7758,10 +7806,10 @@
         "h": 7,
         "w": 12,
         "x": 0,
-        "y": 94
+        "y": 112
       },
       "hiddenSeries": false,
-      "id": 223,
+      "id": 243,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -7785,7 +7833,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -8000,10 +8048,10 @@
         "h": 7,
         "w": 12,
         "x": 12,
-        "y": 94
+        "y": 112
       },
       "hiddenSeries": false,
-      "id": 232,
+      "id": 252,
       "legend": {
         "alignAsTable": true,
         "avg": true,
@@ -8030,7 +8078,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605434495337,
+      "repeatIteration": 1605434972727,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
