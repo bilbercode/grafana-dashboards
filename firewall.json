@@ -16,8 +16,7 @@
   "editable": true,
   "gnetId": 12023,
   "graphTooltip": 0,
-  "id": 23,
-  "iteration": 1605384835357,
+  "iteration": 1605434495337,
   "links": [],
   "panels": [
     {
@@ -1263,7 +1262,7 @@
         "#F2495C",
         "rgba(50, 172, 45, 0.97)"
       ],
-      "datasource": "Prometheus",
+      "datasource": "influxdb-pfsense",
       "decimals": 0,
       "description": "",
       "esMetric": "Count",
@@ -1296,17 +1295,47 @@
         "labelField": "city",
         "latitudeField": "latitude",
         "longitudeField": "longitude",
-        "metricField": "Value",
+        "metricField": "value",
         "queryType": "coordinates"
       },
       "targets": [
         {
-          "expr": "sum(rate(pfsense_blocked_total[1m])) by (latitude, longitude, city)",
-          "format": "table",
-          "instant": true,
-          "interval": "",
-          "legendFormat": "{{city}}",
-          "refId": "A"
+          "groupBy": [
+            {
+              "params": [
+                "latitude"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "longitude"
+              ],
+              "type": "tag"
+            },
+            {
+              "params": [
+                "city"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "firewall.blocked_total",
+          "orderByTime": "ASC",
+          "policy": "autogen",
+          "refId": "A",
+          "resultFormat": "table",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": []
         }
       ],
       "thresholds": "10,15, 30",
@@ -1320,7 +1349,7 @@
       "valueName": "total"
     },
     {
-      "datasource": null,
+      "datasource": "influxdb-pfsense",
       "fieldConfig": {
         "defaults": {
           "custom": {
@@ -1362,12 +1391,33 @@
       "pluginVersion": "7.3.1",
       "targets": [
         {
-          "expr": "sum(rate(pfsense_blocked_total[1m])) by (protocol)",
-          "format": "time_series",
-          "instant": false,
-          "interval": "",
-          "legendFormat": "{{protocol}}",
-          "refId": "A"
+          "alias": "$tag_protocol",
+          "groupBy": [
+            {
+              "params": [
+                "protocol"
+              ],
+              "type": "tag"
+            }
+          ],
+          "measurement": "firewall.blocked_total",
+          "orderByTime": "ASC",
+          "policy": "autogen",
+          "query": "SELECT \"value\" FROM \"autogen\".\"firewall.blocked_total\" WHERE $timeFilter GROUP BY \"protocol\"",
+          "rawQuery": true,
+          "refId": "A",
+          "resultFormat": "time_series",
+          "select": [
+            [
+              {
+                "params": [
+                  "value"
+                ],
+                "type": "field"
+              }
+            ]
+          ],
+          "tags": []
         }
       ],
       "timeFrom": null,
@@ -2891,7 +2941,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -3136,7 +3186,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -3496,7 +3546,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -3741,7 +3791,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -4101,7 +4151,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -4346,7 +4396,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -4706,7 +4756,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -4951,7 +5001,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -5311,7 +5361,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -5556,7 +5606,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -5916,7 +5966,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -6161,7 +6211,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -6521,7 +6571,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -6766,7 +6816,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -7126,7 +7176,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -7371,7 +7421,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -7731,7 +7781,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 38,
       "scopedVars": {
         "LAN_Interfaces": {
@@ -7976,7 +8026,7 @@
       "points": false,
       "renderer": "flot",
       "repeatDirection": "v",
-      "repeatIteration": 1605384835357,
+      "repeatIteration": 1605434495337,
       "repeatPanelId": 39,
       "scopedVars": {
         "LAN_Interfaces": {
