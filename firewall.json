@@ -1403,8 +1403,8 @@
           "measurement": "firewall.blocked_total",
           "orderByTime": "ASC",
           "policy": "autogen",
-          "query": "SELECT \"value\" FROM \"autogen\".\"firewall.blocked_total\" WHERE $timeFilter GROUP BY \"protocol\"",
-          "rawQuery": true,
+          "query": "SELECT count(\"value\") FROM \"autogen\".\"firewall.blocked_total\" WHERE $timeFilter GROUP BY \"protocol\"",
+          "rawQuery": false,
           "refId": "A",
           "resultFormat": "time_series",
           "select": [
@@ -1414,6 +1414,10 @@
                   "value"
                 ],
                 "type": "field"
+              },
+              {
+                "params": [],
+                "type": "count"
               }
             ]
           ],
