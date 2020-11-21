@@ -16,8 +16,8 @@
   "editable": true,
   "gnetId": 9585,
   "graphTooltip": 0,
-  "id": 7,
-  "iteration": 1605134125537,
+  "id": 3,
+  "iteration": 1605961993272,
   "links": [],
   "panels": [
     {
@@ -3656,7 +3656,7 @@
       },
       "fontSize": "100%",
       "gridPos": {
-        "h": 9,
+        "h": 14,
         "w": 16,
         "x": 0,
         "y": 24
@@ -3672,7 +3672,7 @@
         }
       ],
       "maxPerRow": 3,
-      "pageSize": 8,
+      "pageSize": 12,
       "scroll": true,
       "showHeader": true,
       "sort": {
@@ -4078,6 +4078,77 @@
       "title": "Missing TV Shows (Last 7 Days)",
       "transform": "table",
       "type": "table-old"
+    },
+    {
+      "aliasColors": {},
+      "breakPoint": "50%",
+      "cacheTimeout": null,
+      "combine": {
+        "label": "Others",
+        "threshold": 0
+      },
+      "datasource": null,
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "fontSize": "80%",
+      "format": "decbytes",
+      "gridPos": {
+        "h": 7,
+        "w": 8,
+        "x": 16,
+        "y": 31
+      },
+      "id": 51,
+      "interval": null,
+      "legend": {
+        "show": true,
+        "values": true
+      },
+      "legendType": "Right side",
+      "links": [],
+      "nullPointMode": "connected",
+      "pieType": "pie",
+      "pluginVersion": "7.3.1",
+      "strokeWidth": 1,
+      "targets": [
+        {
+          "expr": "node_filesystem_avail_bytes{instance=\"10.42.100.200:9100\",mountpoint=\"/mnt/drive1\"}",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "Free",
+          "refId": "A"
+        },
+        {
+          "expr": "node_filesystem_size_bytes{instance=\"10.42.100.200:9100\", mountpoint=\"/mnt/drive1\"} - node_filesystem_avail_bytes{instance=\"10.42.100.200:9100\",mountpoint=\"/mnt/drive1\"}",
+          "instant": true,
+          "interval": "",
+          "legendFormat": "Used",
+          "refId": "B"
+        }
+      ],
+      "timeFrom": null,
+      "timeShift": null,
+      "title": "Storage",
+      "type": "grafana-piechart-panel",
+      "valueName": "current"
     }
   ],
   "refresh": "30s",
@@ -4230,7 +4301,7 @@
     ]
   },
   "time": {
-    "from": "now-3h",
+    "from": "now-5m",
     "to": "now"
   },
   "timepicker": {
