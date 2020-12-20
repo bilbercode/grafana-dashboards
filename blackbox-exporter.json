@@ -12,14 +12,16 @@
       }
     ]
   },
+  "description": "",
   "editable": true,
   "gnetId": null,
   "graphTooltip": 0,
-  "id": null,
-  "iteration": 1608485661697,
+  "id": 7,
+  "iteration": 1608499303690,
   "links": [],
   "panels": [
     {
+      "collapsed": false,
       "datasource": null,
       "gridPos": {
         "h": 1,
@@ -27,12 +29,12 @@
         "x": 0,
         "y": 0
       },
-      "id": 2,
+      "id": 36,
       "panels": [],
       "repeat": "targets",
       "scopedVars": {
         "targets": {
-          "selected": true,
+          "selected": false,
           "text": "https://plex.keeys.io",
           "value": "https://plex.keeys.io"
         }
@@ -42,238 +44,335 @@
     },
     {
       "cacheTimeout": null,
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {
-            "align": null,
-            "filterable": false
-          },
-          "mappings": [
-            {
-              "from": "",
-              "id": 1,
-              "text": "Available",
-              "to": "",
-              "type": 1,
-              "value": "1"
-            },
-            {
-              "from": "",
-              "id": 2,
-              "text": "Unavailable",
-              "to": "",
-              "type": 1,
-              "value": "0"
-            }
-          ],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "red",
-                "value": null
-              },
-              {
-                "color": "green",
-                "value": 1
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 4,
-        "x": 0,
-        "y": 1
-      },
-      "id": 4,
-      "interval": null,
-      "links": [],
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "center",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "lastNotNull"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "value"
-      },
-      "pluginVersion": "7.3.1",
-      "repeat": "targets",
-      "repeatDirection": "v",
-      "scopedVars": {
-        "targets": {
-          "selected": true,
-          "text": "https://plex.keeys.io",
-          "value": "https://plex.keeys.io"
-        }
-      },
-      "targets": [
-        {
-          "expr": "probe_success{instance=\"$targets\"}",
-          "instant": true,
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
+      "colorBackground": true,
+      "colorValue": false,
+      "colors": [
+        "rgba(245, 54, 54, 0.9)",
+        "rgba(255, 166, 0, 0.89)",
+        "rgba(50, 172, 45, 0.97)"
       ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "green",
-                "value": null
-              },
-              {
-                "color": "orange",
-                "value": 300
-              },
-              {
-                "color": "purple",
-                "value": 400
-              },
-              {
-                "color": "red",
-                "value": 500
-              }
-            ]
-          }
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 2,
-        "x": 4,
-        "y": 1
-      },
-      "id": 6,
-      "options": {
-        "colorMode": "background",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "value"
-      },
-      "pluginVersion": "7.3.1",
-      "targets": [
-        {
-          "expr": "probe_http_status_code{instance=\"$targets\"}",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "datasource": null,
-      "fieldConfig": {
-        "defaults": {
-          "custom": {},
-          "mappings": [],
-          "thresholds": {
-            "mode": "absolute",
-            "steps": [
-              {
-                "color": "rgb(255, 255, 255)",
-                "value": null
-              }
-            ]
-          },
-          "unit": "percentunit"
-        },
-        "overrides": []
-      },
-      "gridPos": {
-        "h": 4,
-        "w": 2,
-        "x": 6,
-        "y": 1
-      },
-      "id": 8,
-      "options": {
-        "colorMode": "value",
-        "graphMode": "none",
-        "justifyMode": "auto",
-        "orientation": "auto",
-        "reduceOptions": {
-          "calcs": [
-            "mean"
-          ],
-          "fields": "",
-          "values": false
-        },
-        "textMode": "auto"
-      },
-      "pluginVersion": "7.3.1",
-      "targets": [
-        {
-          "expr": "min(avg_over_time(probe_success{instance=~\"$targets\"}[30d]))",
-          "interval": "",
-          "legendFormat": "",
-          "refId": "A"
-        }
-      ],
-      "timeFrom": null,
-      "timeShift": null,
-      "title": "",
-      "type": "stat"
-    },
-    {
-      "aliasColors": {},
-      "bars": true,
-      "dashLength": 10,
-      "dashes": false,
-      "datasource": null,
+      "datasource": "Prometheus",
+      "editable": true,
+      "error": false,
       "fieldConfig": {
         "defaults": {
           "custom": {}
         },
         "overrides": []
       },
-      "fill": 1,
-      "fillGradient": 0,
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
       "gridPos": {
-        "h": 4,
-        "w": 8,
-        "x": 8,
+        "h": 3,
+        "w": 3,
+        "x": 0,
         "y": 1
       },
+      "height": "100",
+      "id": 37,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "scopedVars": {
+        "targets": {
+          "selected": false,
+          "text": "https://plex.keeys.io",
+          "value": "https://plex.keeys.io"
+        }
+      },
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "probe_success{instance=~\"$targets\"}",
+          "format": "time_series",
+          "instant": true,
+          "interval": "",
+          "intervalFactor": 2,
+          "legendFormat": "",
+          "metric": "",
+          "refId": "A",
+          "step": 600
+        }
+      ],
+      "thresholds": "0.1,1",
+      "title": "$targets",
+      "type": "singlestat",
+      "valueFontSize": "100%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "Unavailable",
+          "value": "0"
+        },
+        {
+          "op": "=",
+          "text": "Available",
+          "value": "1"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "format": "none",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 3,
+        "y": 1
+      },
+      "id": 54,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "repeat": null,
+      "repeatDirection": "h",
+      "scopedVars": {
+        "targets": {
+          "selected": false,
+          "text": "https://plex.keeys.io",
+          "value": "https://plex.keeys.io"
+        }
+      },
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "probe_http_status_code{instance=~\"$targets\"}",
+          "format": "time_series",
+          "instant": true,
+          "interval": "$__interval",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "Http Status code",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "cacheTimeout": null,
+      "colorBackground": false,
+      "colorValue": false,
+      "colors": [
+        "#299c46",
+        "rgba(237, 129, 40, 0.89)",
+        "#d44a3a"
+      ],
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {}
+        },
+        "overrides": []
+      },
+      "format": "percentunit",
+      "gauge": {
+        "maxValue": 100,
+        "minValue": 0,
+        "show": false,
+        "thresholdLabels": false,
+        "thresholdMarkers": true
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 2,
+        "x": 5,
+        "y": 1
+      },
+      "id": 40,
+      "interval": null,
+      "links": [],
+      "mappingType": 1,
+      "mappingTypes": [
+        {
+          "name": "value to text",
+          "value": 1
+        },
+        {
+          "name": "range to text",
+          "value": 2
+        }
+      ],
+      "maxDataPoints": 100,
+      "nullPointMode": "connected",
+      "nullText": null,
+      "postfix": "",
+      "postfixFontSize": "50%",
+      "prefix": "",
+      "prefixFontSize": "50%",
+      "rangeMaps": [
+        {
+          "from": "null",
+          "text": "N/A",
+          "to": "null"
+        }
+      ],
+      "scopedVars": {
+        "targets": {
+          "selected": false,
+          "text": "https://plex.keeys.io",
+          "value": "https://plex.keeys.io"
+        }
+      },
+      "sparkline": {
+        "fillColor": "rgba(31, 118, 189, 0.18)",
+        "full": false,
+        "lineColor": "rgb(31, 120, 193)",
+        "show": false
+      },
+      "tableColumn": "",
+      "targets": [
+        {
+          "expr": "min(avg_over_time(probe_success{instance=~\"$targets\"}[30d]))",
+          "format": "time_series",
+          "interval": "",
+          "intervalFactor": 1,
+          "legendFormat": "",
+          "refId": "A"
+        }
+      ],
+      "thresholds": "",
+      "title": "Uptime [30d]",
+      "type": "singlestat",
+      "valueFontSize": "80%",
+      "valueMaps": [
+        {
+          "op": "=",
+          "text": "N/A",
+          "value": "null"
+        }
+      ],
+      "valueName": "current"
+    },
+    {
+      "aliasColors": {},
+      "bars": true,
+      "dashLength": 10,
+      "dashes": false,
+      "datasource": "Prometheus",
+      "fieldConfig": {
+        "defaults": {
+          "custom": {},
+          "links": []
+        },
+        "overrides": []
+      },
+      "fill": 10,
+      "fillGradient": 0,
+      "gridPos": {
+        "h": 3,
+        "w": 8,
+        "x": 7,
+        "y": 1
+      },
+      "height": "100",
       "hiddenSeries": false,
-      "id": 10,
+      "hideTimeOverride": false,
+      "id": 38,
+      "interval": "",
       "legend": {
+        "alignAsTable": false,
         "avg": false,
         "current": false,
+        "hideEmpty": false,
+        "hideZero": false,
         "max": false,
         "min": false,
         "show": false,
@@ -282,23 +381,35 @@
       },
       "lines": false,
       "linewidth": 1,
+      "links": [],
       "nullPointMode": "null",
       "options": {
-        "alertThreshold": false
+        "alertThreshold": true
       },
       "percentage": true,
       "pluginVersion": "7.3.1",
-      "pointradius": 2,
+      "pointradius": 5,
       "points": false,
       "renderer": "flot",
+      "scopedVars": {
+        "targets": {
+          "selected": false,
+          "text": "https://plex.keeys.io",
+          "value": "https://plex.keeys.io"
+        }
+      },
       "seriesOverrides": [
         {
           "alias": "GREEN",
-          "color": "#73BF69"
+          "color": "rgba(50, 172, 45, 0.97)"
+        },
+        {
+          "alias": "YELLOW",
+          "color": "rgba(255, 166, 0, 0.89)"
         },
         {
           "alias": "RED",
-          "color": "#F2495C"
+          "color": "rgba(245, 54, 54, 0.9)"
         }
       ],
       "spaceLength": 10,
@@ -307,15 +418,19 @@
       "targets": [
         {
           "expr": "probe_success{instance=~\"$targets\"} == bool 1",
+          "format": "time_series",
+          "hide": false,
           "instant": false,
           "interval": "",
           "intervalFactor": 3,
           "legendFormat": "GREEN",
-          "refId": "A"
+          "metric": "",
+          "refId": "A",
+          "step": 300
         },
         {
           "expr": "probe_success{instance=~\"$targets\"} == bool 0",
-          "instant": false,
+          "format": "time_series",
           "interval": "",
           "intervalFactor": 3,
           "legendFormat": "RED",
@@ -328,9 +443,9 @@
       "timeShift": null,
       "title": "",
       "tooltip": {
-        "shared": true,
-        "sort": 0,
-        "value_type": "individual"
+        "shared": false,
+        "sort": 2,
+        "value_type": "cumulative"
       },
       "type": "graph",
       "xaxis": {
@@ -338,15 +453,17 @@
         "mode": "time",
         "name": null,
         "show": true,
-        "values": []
+        "values": [
+          "total"
+        ]
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "none",
           "label": null,
           "logBase": 1,
           "max": "100",
-          "min": null,
+          "min": "0",
           "show": false
         },
         {
@@ -368,23 +485,24 @@
       "bars": false,
       "dashLength": 10,
       "dashes": false,
-      "datasource": null,
+      "datasource": "Prometheus",
       "fieldConfig": {
         "defaults": {
-          "custom": {}
+          "custom": {},
+          "links": []
         },
         "overrides": []
       },
       "fill": 1,
       "fillGradient": 0,
       "gridPos": {
-        "h": 4,
-        "w": 8,
-        "x": 16,
+        "h": 3,
+        "w": 9,
+        "x": 15,
         "y": 1
       },
       "hiddenSeries": false,
-      "id": 12,
+      "id": 56,
       "legend": {
         "avg": false,
         "current": false,
@@ -396,15 +514,23 @@
       },
       "lines": true,
       "linewidth": 1,
+      "links": [],
       "nullPointMode": "null",
       "options": {
         "alertThreshold": true
       },
       "percentage": false,
       "pluginVersion": "7.3.1",
-      "pointradius": 2,
+      "pointradius": 5,
       "points": false,
       "renderer": "flot",
+      "scopedVars": {
+        "targets": {
+          "selected": false,
+          "text": "https://plex.keeys.io",
+          "value": "https://plex.keeys.io"
+        }
+      },
       "seriesOverrides": [],
       "spaceLength": 10,
       "stack": false,
@@ -412,7 +538,10 @@
       "targets": [
         {
           "expr": "probe_duration_seconds{instance=~\"$targets\"}",
+          "format": "time_series",
+          "instant": false,
           "interval": "",
+          "intervalFactor": 1,
           "legendFormat": "seconds",
           "refId": "A"
         }
@@ -421,7 +550,7 @@
       "timeFrom": null,
       "timeRegions": [],
       "timeShift": null,
-      "title": "",
+      "title": "Probe Duration",
       "tooltip": {
         "shared": true,
         "sort": 0,
@@ -437,7 +566,7 @@
       },
       "yaxes": [
         {
-          "format": "short",
+          "format": "s",
           "label": null,
           "logBase": 1,
           "max": null,
@@ -459,35 +588,35 @@
       }
     }
   ],
+  "refresh": "1m",
+  "revision": null,
   "schemaVersion": 26,
   "style": "dark",
   "tags": [],
   "templating": {
     "list": [
       {
-        "allValue": null,
+        "allValue": ".*",
         "current": {
           "selected": true,
-          "text": "https://plex.keeys.io",
-          "value": "https://plex.keeys.io"
+          "text": [
+            "All"
+          ],
+          "value": [
+            "$__all"
+          ]
         },
         "datasource": "Prometheus",
-        "definition": "label_values(probe_success,instance)",
+        "definition": "label_values(probe_success, instance)",
         "error": null,
         "hide": 0,
-        "includeAll": false,
+        "includeAll": true,
         "label": null,
-        "multi": false,
+        "multi": true,
         "name": "targets",
-        "options": [
-          {
-            "selected": true,
-            "text": "https://plex.keeys.io",
-            "value": "https://plex.keeys.io"
-          }
-        ],
-        "query": "label_values(probe_success,instance)",
-        "refresh": 0,
+        "options": [],
+        "query": "label_values(probe_success, instance)",
+        "refresh": 2,
         "regex": "",
         "skipUrlSync": false,
         "sort": 0,
@@ -500,12 +629,34 @@
     ]
   },
   "time": {
-    "from": "now-6h",
+    "from": "now-24h",
     "to": "now"
   },
-  "timepicker": {},
+  "timepicker": {
+    "refresh_intervals": [
+      "30s",
+      "1m",
+      "5m",
+      "15m",
+      "30m",
+      "1h",
+      "2h",
+      "1d"
+    ],
+    "time_options": [
+      "5m",
+      "15m",
+      "1h",
+      "6h",
+      "12h",
+      "24h",
+      "2d",
+      "7d",
+      "30d"
+    ]
+  },
   "timezone": "",
-  "title": "Ingresses",
-  "uid": null,
-  "version": 0
+  "title": "Telecom Ingress Status",
+  "uid": "4h598lKi2",
+  "version": 2
 }
